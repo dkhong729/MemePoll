@@ -1,69 +1,98 @@
-# Electroneum 實時投票系統 
+# Electroneum Real-Time Voting System  
 
-一個基於 Electroneum 區塊鏈的去中心化實時投票應用，利用其 5 秒區塊最終確定性和低交易費用的優勢。用戶使用 ETN 為「2025 年最佳迷因幣」投票，支持勝方選項的用戶將獲得獎勵。
-
----
-
-## 項目概覽
-
-### 名稱與標語
-- **名稱**: MemeVote
-- **標語**: "用 ETN 投票，快樂贏獎！"
-
-### 描述
-MemeVote 是一個網頁版 dApp，讓用戶使用 Electroneum (ETN) 為「2025 年最佳迷因幣」（如 Dogecoin、Shiba Inu、Pepe Coin、ETN）投票。它展示了 ETN 5 秒最終確定性的實時更新和低費用微交易優勢。目標用戶是加密貨幣愛好者和迷因迷，解決了傳統區塊鏈投票中速度慢、費用高的問題，利用 Electroneum 的獨特特性提供流暢體驗。
+A **decentralized real-time voting application** based on the **Electroneum blockchain**, leveraging its **5-second block finality** and **low transaction fees**. Users vote for the "**Best Meme Coin of 2025**" using ETN, and those who support the winning option receive rewards.  
 
 ---
 
-## 功能 (中級 MVP)
+## 📌 Project Overview  
 
-### 核心功能
-1. **投票介面**:
-   - 顯示 4 個迷因幣選項，實時更新票數。
-   - 用戶連接 MetaMask，每次投票支付 1 ETN。
-   - 投票期 24 小時，帶倒計時顯示。
-2. **實時更新**:
-   - 票數每 5 秒刷新，體現 ETN 的區塊最終確定性。
-   - 簡單 UI 展示投票進度。
-3. **結果展示**:
-   - 投票結束後顯示勝方迷因幣和獎勵分配。
-4. **用戶認證**:
-   - Appwrite 提供註冊/登入功能（可選匿名模式）。
-   - 記錄用戶投票歷史（鏈下存儲）。
+### 🔹 Name & Slogan  
+- **Name**: MemeVote  
+- **Slogan**: "Vote with ETN, Win with Fun!"  
 
-### 解決的問題
-- **確認慢**: 傳統區塊鏈（如以太坊）投票結果延遲，ETN 5 秒最終確定性實現即時更新。
-- **費用高**: 微投票在高費用鏈上不實用，ETN 低費用支持 1 ETN 投票。
-- **參與度**: 獎勵機制激勵用戶參與，將投票變成有趣的遊戲化體驗。
+### 🔹 Description  
+MemeVote is a **web-based dApp** that allows users to vote for the **Best Meme Coin of 2025** (e.g., Dogecoin, Shiba Inu, Pepe Coin, ETN) using **Electroneum (ETN)**.  
 
-### 投票規則
-- **費用**: 每次投票需支付 1 ETN（測試網金額，可調整）。
-- **時長**: 投票從部署開始持續 24 小時。
-- **資格**: 擁有測試網 ETN 和 MetaMask 的用戶均可投票（暫無次數限制）。
-- **勝方**: 投票結束時票數最多的選項獲勝。
+It showcases **Electroneum’s 5-second finality** and **low-fee microtransactions**, providing a seamless voting experience.  
+- 🚀 **Fast**: 5-second confirmation times  
+- 💰 **Cheap**: Near-zero transaction fees  
+- 🎮 **Engaging**: Gamified voting experience  
 
-### 金流方向
-- **輸入**: 用戶每次投票將 1 ETN 發送到智能合約。
-- **獎池**: 所有投票的 ETN 累積成獎池（例如 100 票 = 100 ETN）。
-- **分配**: 
-  - 95% 獎池（例如 95 ETN）平均分配給支持勝方選項的投票者。
-  - 5% 留在合約中（演示用，未來可支持下一輪）。
-- **示例**: 
-  - 100 ETN 獎池，Dogecoin 勝（60 票）。
-  - 95 ETN 分給 60 名投票者，每人約得 1.58 ETN。
-
-### 與 Electroneum 的技術集成
-- **5 秒最終確定性**: 通過事件監聽實現實時票數更新，展示 ETN 速度。
-- **低費用**: 確保 1 ETN 投票經濟實惠，適合微交易。
-- **EVM 兼容**: 使用 Solidity 和 MetaMask，利用 ETN 的以太坊類基礎設施。
+### 🎯 Target Users  
+- **Crypto enthusiasts** looking for a fun, low-cost way to engage in meme coin voting  
+- **Meme coin communities** that want a decentralized and transparent voting system  
+- **ETN supporters** who want to showcase the blockchain’s fast finality and microtransaction capabilities  
 
 ---
 
-## 技術細節
+## ⚡ Features  
 
-### 技術棧
-- **前端**: Next.js（React 框架，支持伺服器端渲染）。
-- **區塊鏈**: Solidity 智能合約，部署於 Electroneum 測試網。
-- **後端**: Appwrite 用於用戶認證和鏈下數據存儲。
-- **Web3**: Web3.js 用於 MetaMask 集成和合約交互。
+### ✅ Core Functionalities  
+1. **Voting Interface**  
+   - Displays 4 meme coin options with **real-time vote updates**.  
+   - Users connect **MetaMask** and **pay 1 ETN per vote**.  
+   - 24-hour voting period with a **live countdown timer**.  
+
+2. **Real-Time Updates**  
+   - Vote counts refresh **every 5 seconds**, demonstrating **ETN’s block finality**.  
+   - **Simple UI** visualizing voting progress.  
+
+3. **Results Display**  
+   - After voting ends, the **winning meme coin** and **reward distribution** are displayed.  
+
+4. **User Authentication**  
+   - Appwrite provides **sign-up/login** (optional **anonymous mode**).  
+   - **Voting history** stored off-chain.  
+
+### 🚀 Problems Solved  
+| Problem | Solution |
+|---------|----------|
+| **Slow Confirmation**: Traditional blockchain voting is delayed. | **ETN’s 5-sec finality** ensures real-time updates. |
+| **High Fees**: Micro-voting is expensive on many chains. | **1 ETN per vote**, leveraging ETN’s low fees. |
+| **Low Engagement**: No incentives to vote. | **Gamified voting** with rewards for the winning side. |
+
+---
+
+## 🏆 Voting Rules  
+
+- **Fee**: **1 ETN per vote** (testnet amount, adjustable).  
+- **Duration**: **24 hours** per voting round.  
+- **Eligibility**: Users with **testnet ETN** and **MetaMask** can vote (**no limit per user**).  
+- **Winner**: Meme coin with the **most votes at the end** wins.  
+
+### 💰 Funds Flow  
+| Step | Action |
+|------|--------|
+| **User votes** | Sends **1 ETN** to the **smart contract**. |
+| **Reward Pool** | All votes accumulate into the **reward pool** (e.g., 100 votes = 100 ETN). |
+| **Distribution** | **95% of the pool** is shared among users who voted for the winning meme coin. |
+| **Example** | **100 ETN pool**, Dogecoin wins (**60 votes**). 95 ETN is split, each voter gets **~1.58 ETN**. |
+
+---
+
+## 🔗 Integration with Electroneum  
+
+- **⚡ 5-Second Finality**: Real-time vote updates using blockchain event listeners.  
+- **💰 Low Fees**: Affordable **1 ETN voting cost**.  
+- **🔗 EVM Compatibility**: Built with **Solidity + MetaMask**, leveraging ETN’s **Ethereum-like** infrastructure.  
+
+---
+
+## 🛠️ Tech Stack  
+
+- **Frontend**: [Next.js](https://nextjs.org/) (**React framework** with SSR).  
+- **Blockchain**: **Solidity** smart contract, deployed on **Electroneum testnet**.  
+- **Backend**: [Appwrite](https://appwrite.io/) for **user authentication** and **off-chain data storage**.  
+- **Web3**: [Web3.js](https://web3js.readthedocs.io/) for **MetaMask integration** and **contract interaction**.  
+
+---
+
+## 📜 License  
+This project is licensed under the **MIT License**.  
+
+---
+
+
+
+
 
